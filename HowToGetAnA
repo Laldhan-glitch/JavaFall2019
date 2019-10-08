@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class HowToGetAnA {
+    public static int Limit = 93, hour = 0,
+            points=0;
+    /*Declaring variables or initializing them outside of the main and the other
+     methods allows us to use the same code in the main and other method
+     */
+
+    public static void main(String[] args) {
+        HourPrediction();
+    }
+    /*I have decided to use HourPrediction class to perform most of my tasks for this program
+    I am taking the input from the user which will be an integer
+    This program will take the user input which will determine how much points is an hour worth of studying
+    From this we can derive that students can earn hour*points for any given hour and point entered by the user
+    My limit for this loop is 93 because the specification says that 93 or above is considered A.
+     */
+
+    public static void HourPrediction(){
+        Scanner keyboard = new Scanner(System.in);
+        System.out.print("how many points is an hour worth of studying? >> ");
+        points = keyboard.nextInt();
+
+        do {
+            System.out.println("If a student studies for "+ hour +" hours they will earn " + hour*points+ " points");
+            hour++;
+        }
+
+        while ( hour*points< Limit);
+        System.out.println("A student would have to spend " + hour + " hours studying to earn more than 93 points and get an A");
+    }
+}
